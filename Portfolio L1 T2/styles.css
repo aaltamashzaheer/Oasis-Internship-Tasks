@@ -1,96 +1,148 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  body{
-    font-family: montserrat;
-  }
-  nav{
-    background: #0082e6;
-    height: 80px;
-    width: 100%;
-  }
-  label.logo{
     color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-  }
-  nav ul{
-    float: right;
-    margin-right: 20px;
-  }
-  nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-  }
-  nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
-  }
-  a.active,a:hover{
-    background: #1b9bff;
-    transition: .5s;
-  }
-  .toggle{
-    float: right;
-    padding-top: 30px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-    
-  }
+    font-family: poppins;
+    background: #0c1022;
+}
 
-  @media (max-width: 952px){
-    label.logo{
-      font-size: 30px;
-      padding-left: 50px;
+nav{
+
+    width: 100%;
+    height: 80px;
+}
+.logo{
+    padding: 22px 20px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 80px;
+}
+
+.menus {
+    float: right;
+    
+}
+.toggle{
+    display: none;
+}
+.menus a{
+    margin-right: 30px;
+    line-height: 80px;
+    font-weight: bold;
+}
+.menus a.active, nav .menus a:hover{
+    background: linear-gradient(45deg,#f06,#3cf);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@media (max-width:768px) {
+    .logo{
+        font-size: 25px;
     }
-    nav ul li a{
-      font-size: 16px;
+    .menus a{
+        font-size: 15px;
     }
-  }
-  @media (max-width: 858px){
+}
+@media (max-width:650px) {
+    .logo{
+        padding: 12px 10px;
+        font-size: 18px;
+    }
+    .menus a{
+        font-size: 13px;
+    }
+}
+@media (max-width:500px) {
+    .logo{
+        font-size: 15px;
+    }
+    .menus a{
+        margin-right: 12px;
+        font-size: 11px;
+    }
+}
+@media (max-width:380px) {
+    .logo{
+        font-size: 20px;
+    }
+    .menus a{
+        display: none;
+    }
     .toggle{
-      display: block;
+        display: block;
+        float: right;
+        margin-top: 30px;
+        margin-right: 20px;
+        font-size: 20px;
     }
-   
-    ul{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background: #2c3e50;
-      text-align: center;
-     
+}
+.home{
+    width: 100% ;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+.home-content{
+    max-width: 500px;
+}
+h1{
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+h3{
+    font-size: 32px;
+    font-weight: 700;
+}
+p{
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+.btn{
+    position: relative;
+    display: inline-flex;
+    height: 48px;
+    width: 180px;
+    font-size: 19px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;   
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg,#f06,#3cf,#f06);
+    top: 0;
+    left: 0;
+    inset: 0;
+    z-index: -1;
+    border-radius: 40px;
+    background-size: 200%;
+    transition: 0.5s ease;
+}
+.btn:hover::before{
+    background-position: 100% 0  ;
+}
+.btn::after{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg,#f06,#3cf,#f06);
+    top: 0;
+    left: 0;
+    inset: 0;
+    background-size: 200%;
+    background-position: 0 0;
+    z-index: -1;
+    border-radius: 40px;
+    transition: 0.5s ease;
+    filter: blur(5px);
+ }
+    .btn:hover::after{
+        background-position: 100% 0  ;
     }
-    nav ul li{
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-    }
-    nav ul li a{
-      font-size: 20px;
-    }
-    a:hover,a.active{
-      background: none;
-      color: #0082e6;
-    }
-    .toggle ~ ul{
-      left: 0;
-    }
-  }
-  @media (max-width: 484){
-    ul{
-        position: relative;
-        height: 30vh;
-    }
-  }
-  
