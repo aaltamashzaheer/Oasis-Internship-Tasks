@@ -1,6 +1,6 @@
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('button');
-const SpecialChar = ['%','*','/', '-', '+', '='];
+const SpecialChars = ['%','*','/', '-', '+', '='];
 let Output=''
 
 
@@ -12,7 +12,7 @@ const calculate = (btnvalue) => {
 }else if (btnvalue === 'DEL') {
     Output = Output.toString().slice(0, -1);
 }else {
-    if (Output === '' && SpecialChar.includes(btnvalue)) return;
+    if (Output === '' && SpecialChars.includes(btnvalue)) return;
     Output += btnvalue;
 }
     display.value = Output;
